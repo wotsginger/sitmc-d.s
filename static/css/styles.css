@@ -1,0 +1,67 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f4ff; /* 淡天蓝背景，亮色模式 */
+    color: #333333; /* 深灰色文字 */
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    padding: 2em;
+    background-color: #ffffff; /* 纯白背景，亮色模式 */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212; /* 深灰色背景，暗色模式 */
+        color: #e0e0e0; /* 浅灰色文字 */
+    }
+    
+    .container {
+        background-color: #333333; /* 深灰色背景，暗色模式 */
+        color: #ccc; /* 浅灰色文字 */
+    }
+
+    a {
+        color: #4a90e2; /* 蓝色链接，更适合暗色背景 */
+    }
+
+    a:hover {
+        color: #81c4f8; /* 悬停时的颜色变亮 */
+    }
+}
+
+h1, #countdown {
+    font-size: 1em;
+    font-weight: normal;
+    margin-bottom: 1em;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #003975;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 1em;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>下载即将开始...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 增加响应式设计的视口标签 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script>
+        window.onload = function() {
+            let seconds = 5;
+            let countdown = document.getElementById('countdown');
+            
+            // 自动开始下载
+            const downloadUrl = "{{ download_url }}";
+            window.location.href = downloadUrl;
+
+            // 更新倒计时
+            let interval = setInterval(function() {
+                seconds--;
+                countdown.innerText = `跳转倒计时：${seconds} 秒`;
+
+                if (seconds <= 0) {
+                    clearInterval(interval);
+                    // 当倒计时结束时，重定向到主网站
+                    window.location.href = "{{ redirect_url }}";
+                }
+            }, 1000);
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>您的下载即将开始...</h1>
+        <p>如果没有开始，请 <a href="{{ download_url }}">点击这里</a></p>
+        <p>本下载源由上海应用技术大学 Minecraft 六角恐龙社提供</p>
+        <p>即将跳转至我们的宣传页</p>
+        <p id="countdown">跳转倒计时：5 秒</p>
+        <p>本下载站目前共产生了： {{ total_downloads }} 次下载</p>
+    </div>
+</body>
+</html>
